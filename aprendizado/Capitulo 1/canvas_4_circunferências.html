@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <title>Pratica de jogos com canvas em html5</title>
+        <meta charset = "utf-8"> 
+
+        <script>
+
+            window.onload =function(){
+                //referenciando o canvas
+                var canvas=document.getElementById('joguinho');
+                    
+                // obtendo a parte grafica do canvas
+                var context=canvas.getContext('2d');
+
+                //cores e espessura da linha
+                context.fillStyle = 'gray';
+                context.strokeStyle = 'black';
+                context.lineWidth = '3.5';
+
+                //primeiro patch
+                context.beginPath();
+                
+                //desenha
+                context.arc(50,50,40,90*Math.PI/180,270*Math.PI/180,false);
+
+                //preenchimento
+                context.fill();
+
+                //contorno
+                context.stroke();
+
+                //Segundo arco
+                context.beginPath();
+
+                context.arc(150,50,40,90*Math.PI/180,270*Math.PI/180,true);
+
+                context.fill();
+                context.stroke();
+
+                //circunferência completa
+                context.beginPath();
+                context.arc(60,200,40,0,2*Math.PI);
+                context.fill();
+                context.stroke();
+
+
+                
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <center>
+            <canvas id="joguinho" width="400px" height="400px">
+                Este recurso não esta disponivel em seu navegador
+            </canvas>
+        </center>
+
+    </body>
+
+
+</html>

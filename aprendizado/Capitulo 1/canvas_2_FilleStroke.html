@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <title>Pratica de jogos com canvas em html5</title>
+        <meta charset = "utf-8"> 
+
+        <script>
+
+            window.onload =function(){
+                //referenciando o canvas
+                var canvas=document.getElementById('joguinho');
+                    
+                // obtendo a parte grafica do canvas
+                var context=canvas.getContext('2d');
+                
+                //pinta o retangulo e aplica
+                context.fillStyle = 'yellow';
+                context.fillRect(50,50,110,220);
+                
+                //define o tamanho da linha,cor e aplica
+                context.lineWidth = 3;
+                context.strokeStyle = 'red';
+                context.strokeRect(50,50,110,220);
+                
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <center>
+            <canvas id="joguinho" width="400px" height="400px">
+                Este recurso não esta disponivel em seu navegador
+            </canvas>
+        </center>
+
+    </body>
+
+
+</html>

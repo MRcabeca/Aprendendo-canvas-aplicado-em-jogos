@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <title>Pratica de jogos com canvas em html5</title>
+        <meta charset = "utf-8"> 
+
+        <script>
+
+            window.onload =function(){
+                //referenciando o canvas
+                var canvas=document.getElementById('joguinho');
+                    
+                // obtendo a parte grafica do canvas
+                var context=canvas.getContext('2d');
+                
+                var imagem = new Image();
+                imagem.src = 'C:/Users/felipe.santos/Desktop/games-js-master/01/img/explosao.png'
+                imagem.onload = function(){
+                    context.drawImage(
+                        imagem,
+                        80,10,60,65, // area de corte na imagem
+                        20,20,60,65 // desenho no canvas
+                    )
+                }
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <center>
+            <canvas id="joguinho" width="400px" height="400px">
+                Este recurso não esta disponivel em seu navegador
+            </canvas>
+        </center>
+
+    </body>
+
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <title>Pratica de jogos com canvas em html5</title>
+        <meta charset = "utf-8"> 
+
+        <script>
+
+            window.onload =function(){
+                //referenciando o canvas
+                var canvas=document.getElementById('joguinho');
+                    
+                //momento inicial
+                var anteirior = new Date().getTime();
+                // obtendo a parte grafica do canvas
+                var context=canvas.getContext('2d');
+                
+                var x = 360;
+                var y = 5;
+                var raio = 5;
+
+                requestAnimationFrame(mexerBola);
+
+                function mexerBola(){
+
+                    //momento atual
+                    var agora = new Date().getTime();
+                    //diferença
+                    var decorrido = agora-anteirior;
+                    //limpar o canvas
+                    context.clearRect(0,0,canvas.width,canvas.height);
+
+                    //desenhar a bola
+                    context.beginPath();
+
+                    var velocidade = 0.5;
+                    var velocidadeRaio = 0.1;
+
+                    context.arc(x,y,raio,(0),2*Math.PI,false);
+                    context.fill();
+
+                    //incrementa valores
+                    x -= velocidade * decorrido /1000;
+                    raio +=velocidadeRaio * decorrido /1000;
+                    y +=velocidade * decorrido /1000;
+
+                    //chama o proximo frame
+                    anterior = agora;
+                    requestAnimationFrame(mexerBola);
+                }
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <center>
+            <canvas id="joguinho" width="400px" height="400px">
+                Este recurso não esta disponivel em seu navegador
+            </canvas>
+        </center>
+
+    </body>
+
+
+</html>
